@@ -2,22 +2,19 @@ const express = require('express')
 const app = express()
 const port = 5000
 const bodyParser =require('body-parser');
-const {User} = require("./models/User");
+const { User }  = require("./models/User");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-const mongoose = require('moongoose')
-mongoose.connect('mongodb+srv://clint:1234@cluster0.m8mub.mongodb.net/<dbname>?retryWrites=true&w=majority',{
+const mongoose = require('mongoose')
+mongoose.connect('mongodb+srv://clint:1234@cluster0.m8mub.mongodb.net/Cluster0?retryWrites=true&w=majority',{
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false 
 }).then( () => console.log('success'))
 .catch(err => console.log(err))
 
-
-
-n
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World!123')
 })
 
 app.post('/register', (req,res) => {
